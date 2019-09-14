@@ -1,0 +1,3 @@
+[submodule "hackspace-foundation-sites"]
+	path = hackspace-foundation-sites
+	url = https://github.com/londonhackspace/hackspace-foundation-sites.git

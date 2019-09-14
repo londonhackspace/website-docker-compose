@@ -1,0 +1,39 @@
+version: '2'
+services:
+  php:
+    build: php
+    volumes:
+      - ./hackspace-foundation-sites:/var/www/hackspace-foundation-sites:z
+    links:
+      - db
+    depends_on:
+      - db
+  django:
+    build: django
+    volumes:
+      - ./hackspace-foundation-sites:/var/www/hackspace-foundation-sites:z
+    volumes_from:
+      - db
+    links:
+      - db
+    depends_on:
+      - db
+  nginx:
+    build: nginx
+    volumes:
+      - ./hackspace-foundation-sites:/var/www/hackspace-foundation-sites:z
+    ports:
+      - 8080:80
+    links:
+      - php
+      - django
+    networks:
+      default:
+        aliases:
+          - nginx
+  db:
+    build: db
+    environment:
+      - POSTGRES_DB=hackspace
+      - POSTGRES_USER=hackspace
+      - POSTGRES_PASSWORD=hackspace
