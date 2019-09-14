@@ -4,10 +4,10 @@ from .settings import *
 SECRET_KEY = ')(umc97y$zy@=_4y1ca3(rrxr1n=9#27ikx#$67@95!j-p^zfy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 SITE_ID = 1
-DOMAIN_NAME = 'london.hackspace.org.uk'
+DOMAIN_NAME = 'localhost'
 ABSOLUTEURI_PROTOCOL = 'https'
 
 ALLOWED_HOSTS = [DOMAIN_NAME]
@@ -27,8 +27,8 @@ DATABASES = {
 PROJECT_MAILING_LIST = 'london-hack-space-test'
 
 FLOURISH_LOOPBACK_URLS = {
-    'authenticate': 'https://nginx/session.php',
-    'destroy': 'https://nginx/session.php?destroy',
+    'authenticate': 'http://nginx/session.php',
+    'destroy': 'http://nginx/session.php?destroy',
 }
 
 CONTACT_EMAIL = 'contact@' + DOMAIN_NAME

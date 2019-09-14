@@ -25,4 +25,4 @@ if [ ! -f /data/scratch/init ]; then
 	touch /data/scratch/init
 fi
 
-~/venv/bin/python manage.py runserver 9001
+~/venv/bin/python manage.py runserver 0.0.0.0:9001
