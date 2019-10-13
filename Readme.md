@@ -23,3 +23,24 @@ also, if you want to be able to push your changes, you'll want to set the remote
 cd hackspace-foundation-sites
 git remote set-url origin git@github.com:londonhackspace/hackspace-foundation-sites.git
 ```
+
+You'll also want to set the Django loopback URLs to suit the containers in your production_settings.py file:
+```
+FLOURISH_LOOPBACK_URLS = {
+    'authenticate': 'http://nginx:8080/session.php',
+    'destroy': 'http://nginx:8080/session.php?destroy',
+}
+```
+
+The database config in production_settings.py should look like this:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'db',
+        'NAME': 'hackspace',
+        'USER': 'hackspace',
+        'PASSWORD': 'hackspace',
+    }
+}
+```

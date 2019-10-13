@@ -23,7 +23,7 @@ services:
     volumes:
       - ./hackspace-foundation-sites:/var/www/hackspace-foundation-sites:z
     ports:
-      - 8080:80
+      - 8080:8080
     links:
       - php
       - django
