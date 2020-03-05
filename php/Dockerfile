@@ -12,7 +12,6 @@ RUN sed -i~ -e "s/short_open_tag = Off/short_open_tag = On/" \
         /etc/php/7.3/fpm/php.ini
 
 RUN sed -i~ -e "s#listen = /run/php/php7.3-fpm.sock#listen = 0.0.0.0:9000#" \
-        -e "s/user = www-data/user = php/" \
         /etc/php/7.3/fpm/pool.d/www.conf
 
 RUN mkdir -p /run/php && \
